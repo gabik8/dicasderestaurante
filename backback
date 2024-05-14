@@ -1,0 +1,40 @@
+import requests
+
+def search_restaurants(api_key, city, neighborhood, cuisine_type):
+    url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
+    query = f"restaurants in {neighborhood}, {city} serving {cuisine_type}"
+    params = {
+        "query": query,
+        "key": api_key
+    }
+    response = requests.get(url, params=params)
+    results = response.json()["results"]
+    
+    if not results:
+        return "Desculpe, não foi possível encontrar restaurantes com esses critérios."
+    
+    restaurants = []
+    for i in range(min(3, len(results))):
+        name = results[i]["name"]
+        address = results[i]["formatted_address"]
+        rating = results[i].get("rating", "Não avaliado")
+        restaurants.append(f"{name} - {address} (Avaliação: {rating})")
+    
+    return restaurants
+
+def main():
+    api_key = "SUA_CHAVE_DE_API_DO_GOOGLE_PLACES_AQUI"
+    city = input("Digite o nome da cidade: ")
+    neighborhood = input("Digite o nome do bairro: ")
+    cuisine_type = input("Digite o tipo de comida que deseja experimentar: ")
+    
+    restaurants = search_restaurants(api_key, city, neighborhood, cuisine_type)
+    if isinstance(restaurants, list):
+        print("Aqui estão algumas opções de restaurantes:")
+        for restaurant in restaurants:
+            print(restaurant)
+    else:
+        print(restaurants)
+
+if __name__ == "__main__":
+    main()
