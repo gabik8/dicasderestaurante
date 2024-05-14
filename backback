@@ -23,7 +23,7 @@ def search_restaurants(api_key, city, neighborhood, cuisine_type):
     return restaurants
 
 def main():
-    api_key = "SUA_CHAVE_DE_API_DO_GOOGLE_PLACES_AQUI"
+    api_key = "AIzaSyAKNmYxUng2cuYEI0tqiFmlQF0HwCJo8uE"
     city = input("Digite o nome da cidade: ")
     neighborhood = input("Digite o nome do bairro: ")
     cuisine_type = input("Digite o tipo de comida que deseja experimentar: ")
