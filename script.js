@@ -5,7 +5,7 @@ document.getElementById("restaurantForm").addEventListener("submit", function(ev
   const neighborhood = document.getElementById("neighborhood").value;
   const cuisine = document.getElementById("cuisine").value;
 
-  fetch(`URL_DA_SUA_API/?city=${city}&neighborhood=${neighborhood}&cuisine=${cuisine}`)
+  fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?/?city=${city}&neighborhood=${neighborhood}&cuisine=${cuisine}`)
     .then(response => response.json())
     .then(data => {
       const resultsDiv = document.getElementById("results");
