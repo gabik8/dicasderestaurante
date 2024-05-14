@@ -1,0 +1,14 @@
+body {
+  background-color: #e6f3ff; /* Azul claro */
+  font-family: Tahoma, sans-serif;
+}
+
+.container {
+  text-align: center;
+  margin-top: 20vh; /* Centraliza verticalmente */
+}
+
+form {
+  display: inline-block;
+  text-align: left;
+}
