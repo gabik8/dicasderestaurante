@@ -8,7 +8,17 @@ body {
   margin-top: 20vh; /* Centraliza verticalmente */
 }
 
-form {
+.input-box {
+  background-color: #1e3a57; /* Azul escuro */
+  padding: 20px;
+  border-radius: 10px;
   display: inline-block;
-  text-align: left;
+}
+
+.input-group {
+  margin-bottom: 4cm; /* Espaçamento entre os inputs */
+}
+
+label {
+  color: #ffffff; /* Cor do texto */
 }
