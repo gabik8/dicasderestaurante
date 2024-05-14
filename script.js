@@ -1,26 +1,41 @@
-document.getElementById("restaurantForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  
-  const city = document.getElementById("city").value;
-  const neighborhood = document.getElementById("neighborhood").value;
-  const cuisine = document.getElementById("cuisine").value;
+body {
+  background-color: #e6f3ff; /* Azul claro */
+  font-family: Tahoma, sans-serif;
+}
 
-  fetch('AIzaSyAKNmYxUng2cuYEI0tqiFmlQF0HwCJo8uE/?city=${city}&neighborhood=${neighborhood}&cuisine=${cuisine}')
-    .then(response => response.json())
-    .then(data => {
-      const resultsDiv = document.getElementById("results");
-      resultsDiv.innerHTML = "";
-      if (data.length === 0) {
-        resultsDiv.innerHTML = "<p>Nenhum restaurante encontrado.</p>";
-      } else {
-        const ul = document.createElement("ul");
-        data.forEach(restaurant => {
-          const li = document.createElement("li");
-          li.textContent = restaurant;
-          ul.appendChild(li);
-        });
-        resultsDiv.appendChild(ul);
-      }
-    })
-    .catch(error => console.error("Erro ao buscar restaurantes:", error));
-});
+.container {
+  text-align: center;
+  margin-top: 20vh; /* Centraliza verticalmente */
+}
+
+.input-box {
+  background-color: #4caf50; /* Verde */
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.input-group {
+  margin-bottom: 4cm; /* Espaçamento entre os inputs */
+}
+
+label {
+  color: #ffffff; /* Cor do texto */
+}
+
+.search-button {
+  background-color: #008CBA; /* Azul */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px #00688B; /* Sombreamento */
+}
+
+.search-button:hover {
+  background-color: #00688B; /* Azul mais escuro */
+}
