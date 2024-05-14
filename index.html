@@ -4,25 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Encontre um Restaurante</title>
-  <style>
-    body {
-      background-color: #e6f3ff; /* Azul claro */
-      font-family: Tahoma, sans-serif;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Encontre um Restaurante</h1>
-  <form id="restaurantForm">
-    <label for="city">Cidade:</label>
-    <input type="text" id="city" required><br>
-    <label for="neighborhood">Bairro:</label>
-    <input type="text" id="neighborhood" required><br>
-    <label for="cuisine">Tipo de Cozinha:</label>
-    <input type="text" id="cuisine" required><br>
-    <button type="submit">Buscar Restaurantes</button>
-  </form>
-  <div id="results"></div>
+  <div class="container">
+    <h1>Encontre um Restaurante</h1>
+    <form id="restaurantForm">
+      <label for="city">Cidade:</label>
+      <input type="text" id="city" required><br>
+      <label for="neighborhood">Bairro:</label>
+      <input type="text" id="neighborhood" required><br>
+      <label for="cuisine">Tipo de Cozinha:</label>
+      <input type="text" id="cuisine" required><br>
+      <button type="submit">Buscar Restaurantes</button>
+    </form>
+    <div id="results"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
